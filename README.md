@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SendMeFunds — Frontend
+
+Frontend for the SendMeFunds fintech wallet system. Built with Next.js and TypeScript, consuming the SendMeFunds REST API for wallet creation, transfers, and account management.
+
+## Features
+
+- User registration and login
+- Wallet dashboard — view balance and transaction history
+- Peer-to-peer transfers with PIN confirmation
+- Ledger view — full transaction history with debit/credit breakdown
+- Role-aware UI — admin features visible to admin and super-admin accounts
+- Cookie-based auth — no tokens stored in localStorage
+
+## Tech Stack
+
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Auth:** next-auth
+- **HTTP:** Axios
 
 ## Getting Started
 
-First, run the development server:
-
+### Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/sendmefunds-frontend.git
+cd sendmefunds-frontend
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a `.env.local` file:
+```env
+NEXT_PUBLIC_API_URL=http://localhost:5000/api/v1
+NEXTAUTH_SECRET=your_nextauth_secret
+NEXTAUTH_URL=http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Run
+```bash
+# development
+npm run dev
 
-## Learn More
+# production build
+npm run build
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Backend
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This frontend connects to the SendMeFunds backend API.
+→ [sendmefunds-backend](https://github.com/shola-devv/SendMeFunds-Fintech-model-.git)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+Deployed on Vercel. Connect the repo and set the environment variables in the Vercel dashboard.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Live Demo
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[sholaemmanuel.dev](https://sholaemmanuel.dev)
+
+## Author
+
+**Shola Emmanuel**
+[sholaemmanuel.dev](https://sholaemmanuel.dev)
